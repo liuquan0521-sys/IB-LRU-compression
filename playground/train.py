@@ -7,8 +7,9 @@ import random
 import shutil
 import sys
 sys.path.append('../')
-import os
 import time
+import os
+
 import logging
 from datetime import datetime
 from PIL import Image
