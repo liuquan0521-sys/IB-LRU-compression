@@ -62,4 +62,4 @@ python test.py --detype
 
 Should you have any questions, please contact [liuquan0521@gmail.com](mailto:liuquan0521@gmail.com).
 
-**Acknowledgment:** This code is based on the [AirNet](https://github.com/XLearning-SCU/2022-CVPR-AirNet) and [Restormer](https://github.com/swz30/Restormer) repositories.
+**Acknowledgment:** This code is based on the [PromptIR](https://github.com/va1shn9v/PromptIR?tab=readme-ov-file) 
