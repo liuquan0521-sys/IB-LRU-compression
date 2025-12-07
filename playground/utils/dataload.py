@@ -204,7 +204,6 @@ class Compress_dataset(Dataset):
         super().__init__()
         self.root_dir = root
         self.transform = transform
-        # self.image_names = self._get_valid_images(self.root_dir)
         self.image_names = Path(image_name).read_text().splitlines()
         self.train = train
     
@@ -225,7 +224,7 @@ class Compress_dataset(Dataset):
         else:
             image = ToTensor()(image)
             
-        # 检查张量是否存在异常值
+
         if torch.isnan(image).any() or torch.isinf(image).any():
             print(f"Image '{image_name}' contains invalid values (NaN or Inf).")
         return image_name, image
