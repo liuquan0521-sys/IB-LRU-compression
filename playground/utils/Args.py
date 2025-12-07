@@ -18,13 +18,13 @@ def train_options():
     parser.add_argument("--beta", type=float, default=1e-6, help="beta value for KL tradeoff")
     parser.add_argument("--patch_size", type=int, default=256, help="Patch size for input images")
     parser.add_argument("--detype", type=str, default=['derainL', 'derainH', 'dehaze', 'denoise15', 'denoise25', 'denoise50'],)
-    parser.add_argument("--model_type", type=str, default='base', help="[base, prompt]")
+    parser.add_argument("--model_type", type=str, default='prompt', help="[base, prompt]")
     parser.add_argument("--cuda", type=bool, default=True, help="Use CUDA for training")
     parser.add_argument("--gpu_id", type=int, default=0, help="GPU ID to use")
 
     # Saving and logging
-    parser.add_argument("--base_dir", type=str, default="../experiment_git", help="save root dir")
-    parser.add_argument("--experiment", type=str, default="daze_0018", help="experiment dir")
+    parser.add_argument("--base_dir", type=str, default="../experiment", help="save root dir")
+    parser.add_argument("--experiment", type=str, default="0018", help="experiment dir")
     parser.add_argument("--save", type=bool, default=True, help="Save the model after training")
     parser.add_argument("--clip_max_norm", type=float, default=1.0, help="Maximum norm for gradient clipping")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
