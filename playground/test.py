@@ -231,7 +231,7 @@ if __name__ == '__main__':
     net = net.to(device)
     checkpoint = torch.load(args.checkpoint_prompt)
     start_epoch = checkpoint['epoch']
-    net.load_state_dict(checkpoint["state_dict"],strict=True)
+    net.load_state_dict(checkpoint["state_dict"],strict=False)
     net.update(force=True)
     test_dataset = PromptTrainDataset(args, "test")
     test_dataloader = DataLoader(test_dataset,
