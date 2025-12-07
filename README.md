@@ -50,7 +50,7 @@ python train.py
 ```
 ## Testing
 
-Download the pretrained checkpoint here: [Download Link](YOUR_LINK_HERE) and place it in `checkpoints/`.
+Download the pretrained checkpoint here: [Download Link](https://drive.google.com/file/d/1kCFr_1NjUs7uaNxpHTMwTIhmoO-Pnyj2/view?usp=sharing) and place it in `checkpoints/`.
 
 To evaluate the model:
 ```
