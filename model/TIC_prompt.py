@@ -41,7 +41,7 @@ class SpatialAdaptiveModulation(nn.Module):
         super().__init__()
         self.feature_channels = feature_channels
         self.attn_channels_out = attn_channels_out if attn_channels_out is not None else feature_channels
-        self.lambda_w_scale = lambda_w_scale
+
         
         self.mlp_mu = nn.Sequential(
             nn.Linear(prompt_dim, self.feature_channels )
@@ -112,7 +112,8 @@ class SpatialAdaptiveModulation(nn.Module):
 
 
 class PromptEncoderConditionalPrior(nn.Module):
-    def __init__(self, input_channels: int, 
+    def __init__(self, 
+                 input_channels: int, 
                  prompt_dim: int, 
                  hidden_channels: int = 64, 
                  num_layers: int = 4):
@@ -191,6 +192,7 @@ class TIC_Prompt(nn.Module):
                  M = 192, 
                  config = None, 
                  input_resolution = (256,256),
+                 use_checkpoint = False,
                  prompt_dim = 128,
                  *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -282,7 +284,7 @@ class TIC_Prompt(nn.Module):
         self.gaussian_conditional = GaussianConditional(None)
         
         if self.args.model_type == 'prompt':
-            self.prompt_gen = PromptEncoderConditionalPrior(3, 128, 4)
+            self.prompt_gen = PromptEncoderConditionalPrior(3, 128,)
             self.prompt_proj = nn.ModuleList([SpatialAdaptiveModulation(feature_channels=trans_channel[i-1], 
                                                                         prompt_dim=self.prompt_dim, )
                                                     for i in self.args.ENCODER_BLOCK])
