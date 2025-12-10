@@ -8,7 +8,7 @@ import torch.nn as nn
 import os
 from torchvision.transforms import ToPILImage
 import torch.nn.functional as F
-from utils.metrics import calculate_conditional_kl_loss, calculate_embedding_separation_loss_cosine,calculate_kl_loss
+from utils.metrics import calculate_kl_loss
 
 def torch2img(x: torch.Tensor):
     return ToPILImage()(x.clamp_(0, 1).squeeze())

@@ -20,7 +20,7 @@ from utils.logger import setup_logger
 import logging
 from utils.dataload import PromptTrainDataset, Compress_dataset
 from torch.utils.data import DataLoader
-from utils.testing import test_epoch
+
 
 def torch2img(x: torch.Tensor):
     return ToPILImage()(x.clamp_(0, 1).squeeze())
